@@ -141,22 +141,6 @@ const StartMenu = ({ open }: TaskBarMenuStateType) => {
                         <span>S4nchzz</span>
                     </div>
                     <Image
-                        className={style.settingsImg}
-                        src={'/img/desktop/taskbar/settings.svg'}
-                        width={28}
-                        height={28}
-                        alt='User'
-                        onClick={(e) => {
-                            const uuid = uuidv4()
-                            addWindow({
-                                uuid: uuid,
-                                node: getAppComponent(ItemType.SETTINGS, uuid),
-                                type: ItemType.SETTINGS,
-                                windowAttr: getDefaultWindowAttr(ItemType.SETTINGS)
-                            })
-                        }}
-                    />
-                    <Image
                         className={style.powerOffImg}
                         src={'/img/desktop/taskbar/power_off.svg'}
                         width={28}
