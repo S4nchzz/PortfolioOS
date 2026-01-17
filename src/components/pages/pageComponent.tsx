@@ -51,7 +51,11 @@ const PageComponent = () => {
     const [ctrlPressed, setCtrlPressed] = useState<boolean>(false)
 
     return (
-        <div className={style.page}>
+        <div
+            className={style.page}
+            onKeyDown={(k) => {
+                console.log(k);
+            }}>
             <div className={style.virtualBody}/>
             <div
                 className={style.container}
