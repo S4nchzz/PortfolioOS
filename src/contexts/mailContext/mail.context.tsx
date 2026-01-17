@@ -47,14 +47,18 @@ export const useMail = () => {
         interval = setInterval(() => {
             ctx!.setTimeoutTime(prev => {
                 if (prev == 0) {
-                    localStorage.removeItem('mtout')
+                    if (typeof window !== 'undefined') {
+                        localStorage.removeItem('mtout')
+                    }
                     clearInterval(interval!)
                     
                     ctx!.setMailBlocked(false)
                     return ctx!.defaultTime
                 }
                 
-                localStorage.setItem('mtout', (prev - 1000).toString())
+                if (typeof window !== 'undefined') {
+                    localStorage.setItem('mtout', (prev - 1000).toString())
+                }
                 return prev - 1000
             })
         }, 1000)

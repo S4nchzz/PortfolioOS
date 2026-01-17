@@ -24,6 +24,7 @@ const MatrixProvider = ({ children }: {children: ReactNode}) => {
     }
 
     const preloadLocalStorageMatrix = (): boolean => {
+        if (typeof window === 'undefined') return false
         const mtx_pos_save = localStorage.getItem('mtx_pos_save')
         if (!mtx_pos_save) return false
         const preloadMatrixJSON = JSON.parse(mtx_pos_save)
@@ -100,7 +101,9 @@ export const useMatrix = () => {
     useEffect(() => {
         if (!matrixContext?.matrix) return
 
-        localStorage.setItem('mtx_pos_save', JSON.stringify(matrixContext?.matrix))
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('mtx_pos_save', JSON.stringify(matrixContext?.matrix))
+        }
         setMatrix(matrixContext?.matrix)
     }, [matrixContext?.matrix])
 
