@@ -1,7 +1,6 @@
 import { ItemType } from "@/lib/constants/Item.enum"
 
 const apps: Record<ItemType, string> = {
-    [ItemType.SETTINGS]: 'settings.svg',
     [ItemType.TERMINAL]: 'terminal.svg',
     [ItemType.RESUME]: 'resume.svg',
     [ItemType.BROSWER]: "browser.svg",

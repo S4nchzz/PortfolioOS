@@ -16,11 +16,6 @@ const defaultWindowAttr: WindowAttr = {
 };
 
 export const appWindowDefaultAttr: Record<ItemType, WindowAttr> = {
-    'SETTINGS': {
-        ...defaultWindowAttr,
-        width: '1000px',
-        height: '800px',
-    },
     'TERMINAL': {
         ...defaultWindowAttr,
         width: '1100px',
